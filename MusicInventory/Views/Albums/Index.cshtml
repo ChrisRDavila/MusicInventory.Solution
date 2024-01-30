@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@using MusicInventory.Models;
+
+<h1>Albums</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No albums have been added yet!</h3>
+} 
+else
+{
+  <ul>
+    @foreach (Album album in Model)
+    {
+      <li>@Html.ActionLink($"{album.Title}", "Details", new { id = album.AlbumId }) | @album.Artist.Name</li>
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Add new album", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

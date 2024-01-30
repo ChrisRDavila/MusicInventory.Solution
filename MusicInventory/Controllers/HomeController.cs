@@ -2,12 +2,12 @@ using Microsoft.AspNetCore.Mvc;
 
 
 
-namespace ProjectName.Controllers
+namespace MusicInventory.Controllers
 {
   public class HomeController : Controller
   {
-    [Route("/")]
-    // Notice the changes below!
-    public ActionResult File() { return View(); }
+   [HttpGet("/")]
+  
+    public ActionResult Index() { return View(); }
   }
 }
