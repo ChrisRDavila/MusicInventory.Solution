@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+@model MusicInventory.Models.Album
+
+<h2>Album Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)</h3>
+<h3>@Html.DisplayNameFor(model => model.Rating): @Html.DisplayFor(model => model.Rating)</h3>
+<h3>@Html.DisplayNameFor(model => model.Release): @Html.DisplayFor(model => model.Release)</h3>
+<h3>@Html.DisplayNameFor(model => model.Artist): @Html.DisplayFor(model => model.Artist.Name)</h3>
+
+<p>@Html.ActionLink("Edit Album", "Edit", new { id = Model.AlbumId })</p>
+<p>@Html.ActionLink("Delete Album", "Delete", new { id = Model.AlbumId })</p>
+<p>@Html.ActionLink("Back to Album list", "Index")</p>

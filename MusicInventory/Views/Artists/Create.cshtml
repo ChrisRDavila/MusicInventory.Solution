@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Artist
+@model MusicInventory.Models.Artist
 
 <h4>Add a new artist</h4>
 @using (Html.BeginForm())
@@ -11,6 +11,6 @@
   @Html.TextBoxFor(model => model.Name)
   @Html.LabelFor(model => model.Genre)
   @Html.TextBoxFor(model => model.Genre)
-  <input type="submit" value="Add new album" />
+  <input type="submit" value="Add" />
 }
 <p>@Html.ActionLink("Show all artists", "Index")</p>

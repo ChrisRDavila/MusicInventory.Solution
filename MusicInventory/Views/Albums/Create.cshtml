@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+@model MusicInventory.Models.Album
+
+<h4>Add a new album</h4>
+
+<p><strong>NOTE:</strong> You need to have at least one artist before you can add an album!</p>
+<p>Go to @Html.ActionLink("this page", "Create", "Artists") to create a artist.</p>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Title)
+  @Html.TextBoxFor(model => model.Title)
+  @Html.LabelFor(model => model.Rating)
+  @Html.TextBoxFor(model => model.Rating)
+  @Html.LabelFor(model => model.Release)
+  @Html.EditorFor(model => model.Release)
+
+  @Html.LabelFor(model => model.Artist)
+  
+  @Html.DropDownList("ArtistId")
+
+  <input type="submit" value="Add new album" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all albums", "Index")</p>

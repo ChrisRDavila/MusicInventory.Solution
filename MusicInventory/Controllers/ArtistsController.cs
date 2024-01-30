@@ -6,18 +6,17 @@ using System.Linq;
 
 namespace MusicInventory.Controllers
 {
-  public class ArtistController : Controller
+  public class ArtistsController : Controller
   {
     private readonly MusicInventoryContext _db;
 
-    public ArtistController(MusicInventoryContext db)
+    public ArtistsController(MusicInventoryContext db)
     {
       _db = db;
     }
     public ActionResult Index()
     {
       List<Artist> model = _db.Artists
-      .OrderBy(artist=>artist.Name)
       .ToList();
       return View(model);
     }
